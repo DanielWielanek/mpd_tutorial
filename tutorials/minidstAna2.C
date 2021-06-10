@@ -76,7 +76,7 @@ void minidstAna2() {
     for (int j = 0; j < recoTracks->GetEntriesFast(); j++) {
       MpdMiniTrack* recoTrack = (MpdMiniTrack*) recoTracks->UncheckedAt(j);
       Int_t mcIndex           = recoTrack->id();
-      if (mcIndex < 0 || mcIndex > mcTracks->GetEntriesFast()) continue;
+      if (mcIndex < 0 || mcIndex >= mcTracks->GetEntriesFast()) continue;
       MpdMiniMcTrack* simTrack = (MpdMiniMcTrack*) mcTracks->UncheckedAt(mcIndex);
       Double_t sigPi, sigKa, sigPr;
       GetSigmas(recoTrack, sigPi, sigKa, sigPr);
