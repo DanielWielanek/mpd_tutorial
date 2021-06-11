@@ -20,7 +20,7 @@ void MyTaskCompiled::Exec(Option_t* opt) {
   }
   for (int i = 0; i < fRecoTracks->GetEntriesFast(); i++) {
     MpdMiniTrack* track = (MpdMiniTrack*) fRecoTracks->UncheckedAt(i);
-    Int_t match         = track->id();
+    Int_t match         = track->mcTrackIndex();
     if (match >= 0 && match < fMcTracks->GetEntriesFast()) {
       MpdMiniMcTrack* mc = (MpdMiniMcTrack*) fMcTracks->UncheckedAt(match);
       TVector3 p         = mc->momentum();
