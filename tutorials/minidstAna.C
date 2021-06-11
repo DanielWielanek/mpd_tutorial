@@ -54,7 +54,7 @@ void minidstAna() {
     t->GetEntry(i);
     for (int j = 0; j < recoTracks->GetEntriesFast(); j++) {
       MpdMiniTrack* recoTrack = (MpdMiniTrack*) recoTracks->UncheckedAt(j);
-      Int_t mcIndex           = recoTrack->id();
+      Int_t mcIndex           = recoTrack->mcTrackIndex();
       if (mcIndex < 0 || mcIndex >= mcTracks->GetEntriesFast()) continue;
       MpdMiniMcTrack* simTrack = (MpdMiniMcTrack*) mcTracks->UncheckedAt(mcIndex);
       TVector3 pSim            = simTrack->momentum();
